@@ -1,13 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+import UseList from './src/networks/UseList';
+
+const queryClient = new QueryClient();
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <View style={styles.container}>
+        <ListPlace />
+      </View>
+    </QueryClientProvider>
+  );
+}
+
+function ListPlace() {
+  const { data, isLoading, isSuccess } = UseList();
+  console.log(data);
+  return (
+    <Text>Loading</Text>
   );
 }
 

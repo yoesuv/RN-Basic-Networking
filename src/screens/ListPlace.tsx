@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList } from 'react-native';
+import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import UseList from '../networks/UseList';
 import ItemPlace from '../components/ItemPlace';
 import Divider from '../components/Divider';
+import { THEME_COLOR } from '../data/Colors';
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,7 @@ function BuildList() {
   if (status === 'loading') {
     return (
       <View style={styles.container}>
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" color={THEME_COLOR}/>
       </View>
     );
   }

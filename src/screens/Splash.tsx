@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { THEME_COLOR } from '../data/Colors';
 
 export default function Splash({ navigation }) {
   setTimeout(() => {
@@ -25,7 +26,8 @@ const styles = StyleSheet.create({
   },
   textSplash: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: THEME_COLOR
   }
 });
 

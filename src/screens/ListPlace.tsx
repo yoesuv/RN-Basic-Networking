@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import UseList from '../networks/UseList';
+import ItemPlace from '../components/ItemPlace';
 
 const queryClient = new QueryClient();
 
@@ -16,21 +17,44 @@ export default function ListPlace() {
 }
 
 function BuildList() {
-  const { data, isLoading, isSuccess } = UseList();
-  console.log(`ListPlace # isLoading: ${isLoading}`);
-  return (
-    <View style={styles.container}>
-      <Text>List Place</Text>
-    </View>
-  );
+  const { data, status } = UseList();
+  if (status === 'loading') {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+  if (status === 'error') {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+  if (status === 'success') {
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data = {data}
+          renderItem = {({item, index}) => (
+            <ItemPlace name={item.nama}/>
+          )}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </View>
+    );
+  }
+
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'stretch',
+    width:"100%",
   },
 });
 

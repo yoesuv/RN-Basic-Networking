@@ -1,19 +1,28 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function ItemPlace({ name }) {
+export default function ItemPlace({ place }) {
   return (
     <View style={styles.container}>
-      <Text>{name}</Text>
+      <Text style={styles.title}>{place.nama}</Text>
+      <Text style={styles.subtitle}>{place.lokasi}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-      width:"100%",
-      height: 50
+    width:"100%",
+    paddingHorizontal: 10,
+    paddingVertical: 5
   },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  subtitle: {
+    fontSize: 14
+  }
 })
 
 export default ItemPlace;

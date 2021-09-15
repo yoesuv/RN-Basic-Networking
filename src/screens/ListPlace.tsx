@@ -4,11 +4,11 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import UseList from '../networks/UseList';
 import ItemPlace from '../components/ItemPlace';
+import Divider from '../components/Divider';
 
 const queryClient = new QueryClient();
 
 export default function ListPlace() {
-
   return (
     <QueryClientProvider client={queryClient}>
       <BuildList />
@@ -38,14 +38,14 @@ function BuildList() {
         <FlatList
           data = {data}
           renderItem = {({item, index}) => (
-            <ItemPlace name={item.nama}/>
+            <ItemPlace place={item}/>
           )}
-          keyExtractor={(item, index) => index.toString()}
+          keyExtractor = {(item, index) => index.toString()}
+          ItemSeparatorComponent= {() => <Divider/>}
         />
       </View>
     );
   }
-
 }
 
 const styles = StyleSheet.create({

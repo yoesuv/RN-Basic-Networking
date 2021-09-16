@@ -7,8 +7,9 @@ import Splash from './src/screens/Splash';
 import ListPlace from './src/screens/ListPlace';
 import DetailPlace from './src/screens/DetailPlace';
 import { THEME_COLOR } from './src/data/Colors';
+import { RootStackParamList } from './src/screens/RootStackParams';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   /* https://stackoverflow.com/a/65573567 */

@@ -1,8 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { THEME_COLOR } from '../data/Colors';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function Splash({ navigation }: {navigation: any}) {
+import { THEME_COLOR } from '../data/Colors';
+import { RootStackParamList } from '../screens/RootStackParams';
+
+type splashScreenProp = StackNavigationProp<RootStackParamList, 'Splash'>;
+
+export default function Splash() {
+  const navigation = useNavigation<splashScreenProp>();
   setTimeout(() => {
     navigation.navigate('ListPlace');
     navigation.reset({

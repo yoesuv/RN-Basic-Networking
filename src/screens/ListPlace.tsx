@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import UseList from '../networks/UseList';
 import ItemPlace from '../components/ItemPlace';
@@ -10,11 +9,7 @@ import { THEME_COLOR } from '../data/Colors';
 
 const queryClient = new QueryClient();
 
-function onItemPress({data}: {data: any}) {
-  console.log(`ListPlace # item pressed ${data.nama}`)
-}
-
-export default function ListPlace({ navigation }: NativeStackScreenProps<{},'ListPlace'>) {
+export default function ListPlace() {
   return (
     <QueryClientProvider client={queryClient}>
       <BuildList />
@@ -44,7 +39,7 @@ function BuildList(): JSX.Element {
         <FlatList
           data = {data}
           renderItem = {({item, index}) => (
-            <ItemPlace place={item} onPress={() => onItemPress(item)}/>
+            <ItemPlace place={item} />
           )}
           keyExtractor = {(item, index) => index.toString()}
           ItemSeparatorComponent= {() => <Divider/>}

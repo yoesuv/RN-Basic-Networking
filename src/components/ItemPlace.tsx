@@ -1,10 +1,14 @@
 import React from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { THEME_COLOR_TRANSPARENT } from '../data/Colors';
+import { useNavigation } from '@react-navigation/native';
 
 export default function ItemPlace({place, onPress}: {place: any, onPress: any}) {
+  const navigation = useNavigation();
   return (
-    <Pressable onPress={onPress}
+    <Pressable onPress={() => {
+      navigation.navigate('DetailPlace');
+    }}
       style={({pressed}) => [{
         backgroundColor: pressed ? THEME_COLOR_TRANSPARENT : 'transparent'
       }]}>

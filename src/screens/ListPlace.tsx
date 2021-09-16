@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import UseList from '../networks/UseList';
 import ItemPlace from '../components/ItemPlace';
@@ -9,11 +10,11 @@ import { THEME_COLOR } from '../data/Colors';
 
 const queryClient = new QueryClient();
 
-function onItemPress(data) {
+function onItemPress({data}: {data: any}) {
   console.log(`ListPlace # item pressed ${data.nama}`)
 }
 
-export default function ListPlace({ navigation }: {navigation: any}) {
+export default function ListPlace({ navigation }: NativeStackScreenProps<{},'ListPlace'>) {
   return (
     <QueryClientProvider client={queryClient}>
       <BuildList />

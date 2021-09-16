@@ -9,6 +9,10 @@ import { THEME_COLOR } from '../data/Colors';
 
 const queryClient = new QueryClient();
 
+function onItemPress() {
+  console.log(`ListPlace # item pressed`)
+}
+
 export default function ListPlace() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,7 +43,7 @@ function BuildList(): JSX.Element {
         <FlatList
           data = {data}
           renderItem = {({item, index}) => (
-            <ItemPlace place={item}/>
+            <ItemPlace place={item} onPress={onItemPress}/>
           )}
           keyExtractor = {(item, index) => index.toString()}
           ItemSeparatorComponent= {() => <Divider/>}

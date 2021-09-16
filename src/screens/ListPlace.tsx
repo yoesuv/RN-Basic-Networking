@@ -17,7 +17,7 @@ export default function ListPlace() {
   );
 }
 
-function BuildList() {
+function BuildList(): JSX.Element {
   const { data, status } = UseList();
   if (status === 'loading') {
     return (
@@ -47,6 +47,11 @@ function BuildList() {
       </View>
     );
   }
+  return (
+    <View style={styles.container}>
+      <Text>Screen List Place</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -58,5 +63,3 @@ const styles = StyleSheet.create({
     width:"100%",
   },
 });
-
-export default ListPlace;

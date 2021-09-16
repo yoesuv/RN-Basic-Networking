@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function ItemPlace({ place }) {
+export default function ItemPlace({place}: {place: any}) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{place.nama}</Text>
@@ -24,5 +24,3 @@ const styles = StyleSheet.create({
     fontSize: 14
   }
 })
-
-export default ItemPlace;

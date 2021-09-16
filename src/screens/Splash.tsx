@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { THEME_COLOR } from '../data/Colors';
 
-export default function Splash({ navigation }) {
+export default function Splash({ navigation }: {navigation: any}) {
   setTimeout(() => {
     navigation.navigate('ListPlace');
     navigation.reset({
@@ -30,5 +30,3 @@ const styles = StyleSheet.create({
     color: THEME_COLOR
   }
 });
-
-export default Splash;

@@ -14,5 +14,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEEEEE'
   }
 })
-
-export default Divider;

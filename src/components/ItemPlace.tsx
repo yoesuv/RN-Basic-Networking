@@ -8,11 +8,13 @@ import { RootStackParamList } from '../screens/RootStackParams';
 
 type listScreenProp = StackNavigationProp<RootStackParamList, 'ListPlace'>;
 
-export default function ItemPlace({place}: {place: any}) {
+export default function ItemPlace({place}) {
   const navigation = useNavigation<listScreenProp>();
   return (
     <Pressable onPress={() => {
-        navigation.navigate('DetailPlace');
+        navigation.navigate('DetailPlace', {
+          data: place
+        });
       }}
       style={({pressed}) => [{
         backgroundColor: pressed ? THEME_COLOR_TRANSPARENT : 'transparent'

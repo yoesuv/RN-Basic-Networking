@@ -1,8 +1,10 @@
 ## Basic Networking ##
-create an app to request data from an API.
-
+create basic app to request data from an API. Build from [Expo Framework](https://expo.dev/).  
+download apk file [here](https://www.dropbox.com/s/5ugnkcetu4h9vwg)
 
 ### Screenshot ###
+| ![](https://i.imgur.com/4es63Ps.jpg) | ![](https://i.imgur.com/UYOoAWr.jpg) | ![](https://i.imgur.com/nyGdx5G.jpg) |
+| :---: | :---: | :---: |
 
 #### List Package ####
 - [React Navigation](https://reactnavigation.org/)

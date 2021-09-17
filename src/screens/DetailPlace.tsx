@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native';
 
 export default function DetailPlace() {
   const route = useRoute();
-  const { data } = route.params;
+  const { data } = route.params as any;
   console.log(`DetailPlace # \n ${JSON.stringify(data, null, 4)}`);
   return (
     <View style={styles.container}>

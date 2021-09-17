@@ -8,7 +8,7 @@ import { RootStackParamList } from '../screens/RootStackParams';
 
 type listScreenProp = StackNavigationProp<RootStackParamList, 'ListPlace'>;
 
-export default function ItemPlace({place}) {
+export default function ItemPlace({place}:{place:any}) {
   const navigation = useNavigation<listScreenProp>();
   return (
     <Pressable onPress={() => {

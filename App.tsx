@@ -1,21 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { LogBox } from 'react-native';
+
+import Splash from './src/screens/Splash';
+import ListPlace from './src/screens/ListPlace';
+import DetailPlace from './src/screens/DetailPlace';
+import { THEME_COLOR } from './src/data/Colors';
+import { RootStackParamList } from './src/screens/RootStackParams';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
+  /* https://stackoverflow.com/a/65573567 */
+  LogBox.ignoreLogs(['Setting a timer for a long period of time'])
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
+        <Stack.Screen name="ListPlace" component={ListPlace} options={{
+          title: 'List Place',
+          headerStyle: {
+            backgroundColor: THEME_COLOR
+          },
+          headerTintColor: '#FFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }}/>
+        <Stack.Screen name="DetailPlace" component={DetailPlace} options={{
+          title: 'Detail Place',
+          headerStyle: {
+            backgroundColor: THEME_COLOR
+          },
+          headerTintColor: '#FFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

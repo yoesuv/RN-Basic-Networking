@@ -38,10 +38,10 @@ function BuildList(): JSX.Element {
       <View style={styles.container}>
         <FlatList
           data = {data}
-          renderItem = {({item, index}) => (
+          renderItem = {({item}) => (
             <ItemPlace place={item} />
           )}
-          keyExtractor = {(item, index) => index.toString()}
+          keyExtractor = {(_, index) => index.toString()}
           ItemSeparatorComponent= {() => <Divider/>}
         />
       </View>

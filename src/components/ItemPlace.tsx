@@ -5,16 +5,15 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import { THEME_COLOR_TRANSPARENT } from '../data/Colors';
 import { RootStackParamList } from '../screens/RootStackParams';
+import { Place } from '../models/Place';
 
 type listScreenProp = StackNavigationProp<RootStackParamList, 'ListPlace'>;
 
-export default function ItemPlace({place}:{place:any}) {
+export default function ItemPlace({place}:{place: Place}) {
   const navigation = useNavigation<listScreenProp>();
   return (
     <Pressable onPress={() => {
-        navigation.navigate('DetailPlace', {
-          data: place
-        });
+        navigation.navigate('DetailPlace', place);
       }}
       style={({pressed}) => [{
         backgroundColor: pressed ? THEME_COLOR_TRANSPARENT : 'transparent'

@@ -1,11 +1,16 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text} from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, RouteProp } from '@react-navigation/native';
+
+import { Place } from '../models/Place';
+import { RootStackParamList } from '../screens/RootStackParams';
+
+type DetailRouteProp = RouteProp<RootStackParamList, 'DetailPlace'>
 
 export default function DetailPlace() {
-  const route = useRoute();
-  const { data } = route.params as any;
-  console.log(`DetailPlace # \n ${JSON.stringify(data, null, 4)}`);
+  const route = useRoute<DetailRouteProp>();
+  const data: Place = route.params
+  console.log(`DetailPlace # data =====> \n ${JSON.stringify(data, null, 4)}`);
   return (
     <View style={styles.container}>
       <Image source={{uri:data.gambar}} style={styles.containerImage} />

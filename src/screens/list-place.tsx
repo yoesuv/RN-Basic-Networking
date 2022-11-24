@@ -1,24 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { QueryClient, QueryClientProvider } from 'react-query';
 
 import UseList from '../networks/UseList';
 import ItemPlace from '../components/item-place';
 import Divider from '../components/divider';
 import { THEME_COLOR } from '../data/colors';
 
-const queryClient = new QueryClient();
-
 export default function ListPlaceScreen() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <BuildList />
-    </QueryClientProvider>
-  );
-}
-
-function BuildList(): JSX.Element {
+  
   const { data, status } = UseList();
+ 
   if (status === 'loading') {
     return (
       <View style={styles.container}>
@@ -26,6 +17,7 @@ function BuildList(): JSX.Element {
       </View>
     );
   }
+
   if (status === 'error') {
     return (
       <View style={styles.container}>
@@ -33,6 +25,7 @@ function BuildList(): JSX.Element {
       </View>
     );
   }
+
   if (status === 'success') {
     return (
       <View style={styles.container}>
@@ -47,6 +40,7 @@ function BuildList(): JSX.Element {
       </View>
     );
   }
+  
   return (
     <View style={styles.container}>
       <Text>Screen List Place</Text>

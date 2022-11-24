@@ -5,11 +5,11 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import { THEME_COLOR_TRANSPARENT } from '../data/Colors';
 import { RootStackParamList } from '../screens/RootStackParams';
-import { Place } from '../models/Place';
+import { PlaceModel } from '../models/place-model';
 
 type listScreenProp = StackNavigationProp<RootStackParamList, 'ListPlace'>;
 
-export default function ItemPlace({place}:{place: Place}) {
+export default function ItemPlace({place}:{place: PlaceModel}) {
   const navigation = useNavigation<listScreenProp>();
   return (
     <Pressable onPress={() => {

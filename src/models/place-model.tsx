@@ -1,4 +1,4 @@
-export interface Place {
+export interface PlaceModel {
     nama:      string;
     lokasi:    string;
     deskripsi: string;

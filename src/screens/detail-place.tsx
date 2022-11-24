@@ -13,7 +13,10 @@ export default function DetailPlaceScreen() {
   console.log(`DetailPlace # data =====> \n ${JSON.stringify(data, null, 4)}`);
   return (
     <View style={styles.container}>
-      <Image source={{uri:data.gambar}} style={styles.containerImage} />
+      <View style={styles.containerImage}>
+        <View style={styles.placeHolderImage} />
+        <Image source={{uri:data.gambar}} style={styles.containerImage} />
+      </View>
       <Text style={styles.title}>{data.nama}</Text>
       <Text style={styles.description}>{data.deskripsi}</Text>
     </View>
@@ -27,7 +30,13 @@ const styles = StyleSheet.create({
   },
   containerImage: {
       width: "100%",
-      height: 250
+      height: 250,
+  },
+  placeHolderImage: {
+    backgroundColor: '#EEEEEE',
+    width: "100%",
+    height: 250,
+    position: 'absolute',
   },
   title : {
     fontSize: 22,

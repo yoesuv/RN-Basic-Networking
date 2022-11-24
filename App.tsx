@@ -6,7 +6,7 @@ import { LogBox } from 'react-native';
 import Splash from './src/screens/Splash';
 import ListPlace from './src/screens/ListPlace';
 import DetailPlace from './src/screens/DetailPlace';
-import { THEME_COLOR } from './src/data/Colors';
+import { THEME_COLOR } from './src/data/colors';
 import { RootStackParamList } from './src/screens/RootStackParams';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

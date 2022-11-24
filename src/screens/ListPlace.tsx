@@ -3,9 +3,9 @@ import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-nativ
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import UseList from '../networks/UseList';
-import ItemPlace from '../components/ItemPlace';
-import Divider from '../components/Divider';
-import { THEME_COLOR } from '../data/Colors';
+import ItemPlace from '../components/item-place';
+import Divider from '../components/divider';
+import { THEME_COLOR } from '../data/colors';
 
 const queryClient = new QueryClient();
 

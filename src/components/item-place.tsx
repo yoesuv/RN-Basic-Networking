@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { THEME_COLOR_TRANSPARENT } from '../data/Colors';
+import { THEME_COLOR_TRANSPARENT } from '../data/colors';
 import { RootStackParamList } from '../screens/RootStackParams';
 import { PlaceModel } from '../models/place-model';
 

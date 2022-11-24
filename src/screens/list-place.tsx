@@ -1,24 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { QueryClient, QueryClientProvider } from 'react-query';
 
-import UseList from '../networks/UseList';
-import ItemPlace from '../components/ItemPlace';
-import Divider from '../components/Divider';
-import { THEME_COLOR } from '../data/Colors';
+import ItemPlace from '../components/item-place';
+import Divider from '../components/divider';
+import { THEME_COLOR } from '../data/colors';
+import UseListPlace from '../networks/list-place-service';
 
-const queryClient = new QueryClient();
-
-export default function ListPlace() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <BuildList />
-    </QueryClientProvider>
-  );
-}
-
-function BuildList(): JSX.Element {
-  const { data, status } = UseList();
+export default function ListPlaceScreen() {
+  
+  const { data, status } = UseListPlace();
+ 
   if (status === 'loading') {
     return (
       <View style={styles.container}>
@@ -26,6 +17,7 @@ function BuildList(): JSX.Element {
       </View>
     );
   }
+
   if (status === 'error') {
     return (
       <View style={styles.container}>
@@ -33,20 +25,22 @@ function BuildList(): JSX.Element {
       </View>
     );
   }
+
   if (status === 'success') {
     return (
       <View style={styles.container}>
         <FlatList
           data = {data}
-          renderItem = {({item, index}) => (
+          renderItem = {({item}) => (
             <ItemPlace place={item} />
           )}
-          keyExtractor = {(item, index) => index.toString()}
+          keyExtractor = {(_, index) => index.toString()}
           ItemSeparatorComponent= {() => <Divider/>}
         />
       </View>
     );
   }
+  
   return (
     <View style={styles.container}>
       <Text>Screen List Place</Text>

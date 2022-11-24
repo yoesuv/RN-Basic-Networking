@@ -7,6 +7,7 @@ download apk file [here](https://www.dropbox.com/s/5ugnkcetu4h9vwg)
 | :---: | :---: | :---: |
 
 #### List Package ####
+- [Axios](https://axios-http.com/)
 - [React Navigation](https://reactnavigation.org/)
 - [React Query](https://react-query.tanstack.com/)
 

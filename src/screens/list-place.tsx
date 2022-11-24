@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
 
-import UseList from '../networks/UseList';
 import ItemPlace from '../components/item-place';
 import Divider from '../components/divider';
 import { THEME_COLOR } from '../data/colors';
+import UseListPlace from '../networks/list-place-service';
 
 export default function ListPlaceScreen() {
   
-  const { data, status } = UseList();
+  const { data, status } = UseListPlace();
  
   if (status === 'loading') {
     return (

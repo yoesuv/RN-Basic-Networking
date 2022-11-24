@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import { THEME_COLOR_TRANSPARENT } from '../data/colors';
-import { RootStackParamList } from '../screens/RootStackParams';
+import { RootStackParamList } from '../screens/root-stack-params';
 import { PlaceModel } from '../models/place-model';
 
 type listScreenProp = StackNavigationProp<RootStackParamList, 'ListPlace'>;

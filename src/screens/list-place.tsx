@@ -9,7 +9,7 @@ import { THEME_COLOR } from '../data/colors';
 
 const queryClient = new QueryClient();
 
-export default function ListPlace() {
+export default function ListPlaceScreen() {
   return (
     <QueryClientProvider client={queryClient}>
       <BuildList />

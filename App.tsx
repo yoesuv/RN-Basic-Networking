@@ -3,11 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LogBox } from 'react-native';
 
-import Splash from './src/screens/Splash';
-import ListPlace from './src/screens/ListPlace';
-import DetailPlace from './src/screens/DetailPlace';
+import SplashScreen from './src/screens/splash';
+import ListPlaceScreen from './src/screens/list-place';
+import DetailPlaceScreen from './src/screens/detail-place';
 import { THEME_COLOR } from './src/data/colors';
-import { RootStackParamList } from './src/screens/RootStackParams';
+import { RootStackParamList } from './src/screens/root-stack-params';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -17,8 +17,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
-        <Stack.Screen name="ListPlace" component={ListPlace} options={{
+        <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown: false}} />
+        <Stack.Screen name="ListPlace" component={ListPlaceScreen} options={{
           title: 'List Place',
           headerStyle: {
             backgroundColor: THEME_COLOR
@@ -28,7 +28,7 @@ export default function App() {
             fontWeight: 'bold',
           }
         }}/>
-        <Stack.Screen name="DetailPlace" component={DetailPlace} options={{
+        <Stack.Screen name="DetailPlace" component={DetailPlaceScreen} options={{
           title: 'Detail Place',
           headerStyle: {
             backgroundColor: THEME_COLOR

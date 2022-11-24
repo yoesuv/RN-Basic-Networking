@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import { THEME_COLOR } from '../data/colors';
-import { RootStackParamList } from '../screens/RootStackParams';
+import { RootStackParamList } from './root-stack-params';
 
 type splashScreenProp = StackNavigationProp<RootStackParamList, 'Splash'>;
 
-export default function Splash() {
+export default function SplashScreen() {
   const navigation = useNavigation<splashScreenProp>();
   setTimeout(() => {
     navigation.navigate('ListPlace');

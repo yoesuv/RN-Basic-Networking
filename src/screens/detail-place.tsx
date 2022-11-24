@@ -3,11 +3,11 @@ import { StyleSheet, View, Image, Text} from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
 
 import { PlaceModel } from '../models/place-model';
-import { RootStackParamList } from '../screens/RootStackParams';
+import { RootStackParamList } from './root-stack-params';
 
 type DetailRouteProp = RouteProp<RootStackParamList, 'DetailPlace'>
 
-export default function DetailPlace() {
+export default function DetailPlaceScreen() {
   const route = useRoute<DetailRouteProp>();
   const data: PlaceModel = route.params
   console.log(`DetailPlace # data =====> \n ${JSON.stringify(data, null, 4)}`);

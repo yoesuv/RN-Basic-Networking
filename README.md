@@ -1,6 +1,11 @@
 ## Basic Networking ##
 create basic app to request data from an API. Build from [Expo Framework](https://expo.dev/).  
-download apk file [here](https://www.dropbox.com/s/d2xt0t34ew3ijtf)
+download apk file [here](https://e.pcloud.link/publink/show?code=XZpVysZwF8aFaveUAzp4rL0gE7tQpGuNV8X)
+
+```
+Node JS
+v18.17.1
+```
 
 ### Screenshot ###
 | ![](https://i.imgur.com/4es63Ps.jpg) | ![](https://i.imgur.com/UYOoAWr.jpg) | ![](https://i.imgur.com/nyGdx5G.jpg) |

@@ -8,9 +8,9 @@ import UseListPlace from '../networks/list-place-service';
 
 export default function ListPlaceScreen() {
   
-  const { data, status } = UseListPlace();
+  const { data, isLoading, isError, isPending } = UseListPlace();
  
-  if (status === 'loading') {
+  if (isPending || isLoading) {
     return (
       <View style={styles.container}>
         <ActivityIndicator size="large" color={THEME_COLOR}/>
@@ -18,32 +18,24 @@ export default function ListPlaceScreen() {
     );
   }
 
-  if (status === 'error') {
+  if (isError) {
     return (
       <View style={styles.container}>
-        <Text>Loading...</Text>
+        <Text>Error Load...</Text>
       </View>
     );
   }
 
-  if (status === 'success') {
-    return (
-      <View style={styles.container}>
-        <FlatList
-          data = {data}
-          renderItem = {({item}) => (
-            <ItemPlace place={item} />
-          )}
-          keyExtractor = {(_, index) => index.toString()}
-          ItemSeparatorComponent= {() => <Divider/>}
-        />
-      </View>
-    );
-  }
-  
   return (
     <View style={styles.container}>
-      <Text>Screen List Place</Text>
+      <FlatList
+        data = {data}
+        renderItem = {({item}) => (
+          <ItemPlace place={item} />
+        )}
+        keyExtractor = {(_, index) => index.toString()}
+        ItemSeparatorComponent= {() => <Divider/>}
+      />
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { LogBox } from 'react-native';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import AppNavigation from './src/navigation';
 

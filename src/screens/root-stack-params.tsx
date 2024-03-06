@@ -1,4 +1,4 @@
-import { PlaceModel } from '../models/place-model';
+import { PlaceModel } from "../models/place-model";
 
 export type RootStackParamList = {
   Splash: undefined;

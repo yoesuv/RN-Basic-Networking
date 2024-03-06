@@ -1,19 +1,24 @@
-import React from 'react';
-import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
+import React from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  ActivityIndicator,
+} from "react-native";
 
-import ItemPlace from '../components/item-place';
-import Divider from '../components/divider';
-import { THEME_COLOR } from '../data/colors';
-import UseListPlace from '../networks/list-place-service';
+import ItemPlace from "../components/item-place";
+import Divider from "../components/divider";
+import { THEME_COLOR } from "../data/colors";
+import UseListPlace from "../networks/list-place-service";
 
 export default function ListPlaceScreen() {
-  
   const { data, isLoading, isError, isPending } = UseListPlace();
- 
+
   if (isPending || isLoading) {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color={THEME_COLOR}/>
+        <ActivityIndicator size="large" color={THEME_COLOR} />
       </View>
     );
   }
@@ -29,12 +34,10 @@ export default function ListPlaceScreen() {
   return (
     <View style={styles.container}>
       <FlatList
-        data = {data}
-        renderItem = {({item}) => (
-          <ItemPlace place={item} />
-        )}
-        keyExtractor = {(_, index) => index.toString()}
-        ItemSeparatorComponent= {() => <Divider/>}
+        data={data}
+        renderItem={({ item }) => <ItemPlace place={item} />}
+        keyExtractor={(_, index) => index.toString()}
+        ItemSeparatorComponent={() => <Divider />}
       />
     </View>
   );
@@ -43,9 +46,9 @@ export default function ListPlaceScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    width:"100%",
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "stretch",
+    width: "100%",
   },
 });

@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { useRoute, RouteProp } from "@react-navigation/native";
+import { Image } from "expo-image";
 
 import { PlaceModel } from "../models/place-model";
 import { RootStackParamList } from "./root-stack-params";
@@ -14,8 +15,14 @@ export default function DetailPlaceScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.containerImage}>
-        <View style={styles.placeHolderImage} />
-        <Image source={{ uri: data.gambar }} style={styles.containerImage} />
+        <Image
+          style={styles.containerImage}
+          source={{ uri: data.gambar }}
+          contentFit="cover"
+          placeholder={require("../images/placeholder_image.png")}
+          placeholderContentFit="cover"
+          transition={1000}
+        />
       </View>
       <Text style={styles.title}>{data.nama}</Text>
       <Text style={styles.description}>{data.deskripsi}</Text>

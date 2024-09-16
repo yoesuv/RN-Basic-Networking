@@ -2,15 +2,16 @@
   "expo": {
     "name": "RN Basic Networking",
     "slug": "rn-basic-networking",
-    "version": "1.0.2",
+    "version": "1.0.4",
+    "android.versionCode": "1",
+    "ios.buildNumber": "1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

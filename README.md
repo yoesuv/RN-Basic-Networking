@@ -1,10 +1,10 @@
 ## Basic Networking ##
 create basic app to request data from an API. Build from [Expo Framework](https://expo.dev/).  
-download apk file [here](https://e.pcloud.link/publink/show?code=XZm7UnZlUXl0V3KXYf8qWdHKM4zY77GVfKk)
+download apk file [here](https://e.pcloud.link/publink/show?code=XZ8idPZrd7AhwWOzXJYe0sVnMlBtSkpbN97)
 
 ```
-Node JS
-v18.19.0
+Node JS     | Java
+v18.19.0    | java 17.0.11 2024-04-16 LTS
 ```
 
 ### Screenshot ###
@@ -13,6 +13,7 @@ v18.19.0
 
 #### List Package ####
 - [Axios](https://axios-http.com/)
+- [Expo Image](https://www.npmjs.com/package/expo-image)
 - [React Navigation](https://reactnavigation.org/)
 - [React Query](https://react-query.tanstack.com/)
 

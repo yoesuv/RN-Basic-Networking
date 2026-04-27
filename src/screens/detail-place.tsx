@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useRoute, RouteProp } from "@react-navigation/native";
 import { Image } from "expo-image";
 
@@ -13,7 +14,7 @@ export default function DetailPlaceScreen() {
   const data: PlaceModel = route.params;
   console.log(`DetailPlace # data =====> \n ${JSON.stringify(data, null, 4)}`);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["bottom"]}>
       <View style={styles.containerImage}>
         <Image
           style={styles.containerImage}
@@ -26,7 +27,7 @@ export default function DetailPlaceScreen() {
       </View>
       <Text style={styles.title}>{data.nama}</Text>
       <Text style={styles.description}>{data.deskripsi}</Text>
-    </View>
+    </SafeAreaView>
   );
 }
 

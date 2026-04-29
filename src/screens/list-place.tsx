@@ -6,6 +6,7 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import ItemPlace from "../components/item-place";
 import Divider from "../components/divider";
@@ -17,29 +18,29 @@ export default function ListPlaceScreen() {
 
   if (isPending || isLoading) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <ActivityIndicator size="large" color={THEME_COLOR} />
-      </View>
+      </SafeAreaView>
     );
   }
 
   if (isError) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text>Error Load...</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["bottom"]}>
       <FlatList
         data={data}
         renderItem={({ item }) => <ItemPlace place={item} />}
         keyExtractor={(_, index) => index.toString()}
         ItemSeparatorComponent={() => <Divider />}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
